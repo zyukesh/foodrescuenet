@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Leaf, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,14 +18,14 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-md group-hover:shadow-glow transition-shadow">
               <Leaf className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="font-bold text-lg md:text-xl text-foreground">
               Food Rescue<span className="text-primary"> Network</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
@@ -41,9 +42,11 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost">Sign In</Button>
-            <Button variant="hero" size="lg">
-              Donate Food
+            <Button variant="ghost" asChild>
+              <Link to="/sign-in">Sign In</Link>
+            </Button>
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/donate">Donate Food</Link>
             </Button>
           </div>
 
@@ -72,10 +75,12 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                <Button variant="ghost" className="justify-start">
-                  Sign In
+                <Button variant="ghost" className="justify-start" asChild>
+                  <Link to="/sign-in" onClick={() => setIsMenuOpen(false)}>Sign In</Link>
                 </Button>
-                <Button variant="hero">Donate Food</Button>
+                <Button variant="hero" asChild>
+                  <Link to="/donate" onClick={() => setIsMenuOpen(false)}>Donate Food</Link>
+                </Button>
               </div>
             </nav>
           </div>
