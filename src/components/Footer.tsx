@@ -111,9 +111,15 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="py-6 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-primary-foreground/60 text-sm">
-            © {currentYear} Food Rescue Network. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+            <p className="text-primary-foreground/60 text-sm">
+              © {currentYear} Food Rescue Network. All rights reserved.
+            </p>
+            <span className="hidden md:inline text-primary-foreground/30">•</span>
+            <p className="text-primary-foreground/50 text-xs">
+              Created by <span className="font-semibold text-primary-foreground/70">Youkesh KS</span>
+            </p>
+          </div>
           
           {/* Social Links */}
           <div className="flex items-center gap-4">
