@@ -40,11 +40,8 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" asChild>
-              <Link to="/sign-in">Sign In</Link>
-            </Button>
             <Button variant="hero" size="lg" asChild>
               <Link to="/donate">Donate Food</Link>
             </Button>
@@ -75,9 +72,6 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                <Button variant="ghost" className="justify-start" asChild>
-                  <Link to="/sign-in" onClick={() => setIsMenuOpen(false)}>Sign In</Link>
-                </Button>
                 <Button variant="hero" asChild>
                   <Link to="/donate" onClick={() => setIsMenuOpen(false)}>Donate Food</Link>
                 </Button>
