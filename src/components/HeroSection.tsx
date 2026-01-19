@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
@@ -41,14 +42,18 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Button variant="hero-accent" size="xl">
-              <Heart className="w-5 h-5" />
-              Donate Food Now
+            <Button variant="hero-accent" size="xl" asChild>
+              <Link to="/donate">
+                <Heart className="w-5 h-5" />
+                Donate Food Now
+              </Link>
             </Button>
-            <Button variant="hero-outline" size="xl">
-              <MapPin className="w-5 h-5" />
-              Find Nearby Food
-              <ArrowRight className="w-5 h-5" />
+            <Button variant="hero-outline" size="xl" asChild>
+              <Link to="/find-food">
+                <MapPin className="w-5 h-5" />
+                Find Nearby Food
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </Button>
           </div>
 

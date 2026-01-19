@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Store, Building2, Users, Shield, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const roles = [
   {
@@ -8,6 +9,7 @@ const roles = [
     title: "Food Donors",
     description: "Restaurants, hotels, event organizers, and households with surplus food to share.",
     cta: "Start Donating",
+    href: "/register-donor",
     features: ["List food in minutes", "Track your impact", "Earn donor badges"],
   },
   {
@@ -15,6 +17,7 @@ const roles = [
     title: "NGOs",
     description: "Non-profit organizations serving communities in need of food assistance.",
     cta: "Register NGO",
+    href: "/register-ngo",
     features: ["Get verified status", "Browse donations", "Request pickups"],
   },
   {
@@ -22,6 +25,7 @@ const roles = [
     title: "Volunteers",
     description: "Community members ready to help collect and deliver food donations.",
     cta: "Become a Volunteer",
+    href: "/register-volunteer",
     features: ["Flexible schedule", "Local pickups", "Make an impact"],
   },
   {
@@ -29,6 +33,7 @@ const roles = [
     title: "Partners",
     description: "Corporate partners and sponsors supporting our mission at scale.",
     cta: "Partner With Us",
+    href: "/partner",
     features: ["CSR reporting", "Brand visibility", "Team volunteering"],
   },
 ];
@@ -85,9 +90,11 @@ const JoinSection = () => {
               </ul>
 
               {/* CTA Button */}
-              <Button variant="outline" className="w-full group">
-                {role.cta}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Button variant="outline" className="w-full group" asChild>
+                <Link to={role.href}>
+                  {role.cta}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
             </Card>
           ))}
